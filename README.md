@@ -1,6 +1,5 @@
 
 # Printf
-![GitHub top language](https://img.shields.io/github/languages/top/Pablo-Palma/printf) ![GitHub last commit](https://img.shields.io/github/last-commit/Pablo-Palma/printf) ![GitHub](https://img.shields.io/github/license/Pablo-Palma/printf)
 
 
 Welcome to Printf! A personal reimplementation of the well-known `printf` function from the standard C library. If you're in need of a reliable and versatile printing function for your next C project, you're in the right spot!
