@@ -6,7 +6,7 @@
 /*   By: pabpalma <pabpalma>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 08:27:38 by pabpalma          #+#    #+#             */
-/*   Updated: 2023/09/26 10:00:05 by pabpalma         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:55:39 by pabpalma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ int	main(void)
 	printf("\n");
 	printf("%d\n", ft_putunsigned_fd(-3, 1));
 	printf("\n");
+	printf("%u\n", -4294967296) // wrap-around
+	printf("%u\n", -1) // underflow
+	printf("%u\n", 4294967296) // overflow
 	return (0);
 }*/

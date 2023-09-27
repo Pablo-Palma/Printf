@@ -6,7 +6,7 @@
 /*   By: pabpalma <pabpalma>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:38:33 by pabpalma          #+#    #+#             */
-/*   Updated: 2023/09/26 12:07:52 by pabpalma         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:34:38 by pabpalma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ char	*ft_itoa_base(unsigned long value, int base)
 	result = (char *)malloc(sizeof(char) * len + 1);
 	if (!result)
 		return (NULL);
-	if (value == 0)
-	{
-		result[0] = '0';
-		result[1] = '\0';
-	}
 	else
 	{
 		result[len] = '\0';

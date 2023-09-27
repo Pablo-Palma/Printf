@@ -6,7 +6,7 @@
 /*   By: pabpalma <pabpalma>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:04:42 by pabpalma          #+#    #+#             */
-/*   Updated: 2023/09/25 13:17:46 by pabpalma         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:47:54 by pabpalma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	ft_putptr_fd(void *ptr, int fd)
 	if (!hex_str)
 		return (-1);
 	ft_putstr_fd("0x", fd);
-	ft_putstr_fd(hex_str, fd);
-	len = 2 + ft_strlen(hex_str);
+	len = ft_putstr_fd(hex_str, fd) + 2;
 	free(hex_str);
 	return (len);
 }

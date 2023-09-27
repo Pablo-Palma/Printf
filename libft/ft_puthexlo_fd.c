@@ -6,7 +6,7 @@
 /*   By: pabpalma <pabpalma>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 10:56:03 by pabpalma          #+#    #+#             */
-/*   Updated: 2023/09/26 12:17:38 by pabpalma         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:14:01 by pabpalma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int	ft_puthexlo_fd(unsigned int n, int fd)
 /*
 int	main(void)
 {
+	ft_puthexlo_fd(INT_MAX, 1);
+	printf("\n");
+	printf("%x", INT_MAX);
+	printf("\n");
 	ft_puthexlo_fd(0, 1);
 	return (0);
 }*/

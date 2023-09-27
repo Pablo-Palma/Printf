@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printftry.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabpalma <pabpalma>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 15:45:56 by pabpalma          #+#    #+#             */
-/*   Updated: 2023/09/26 15:05:42 by pabpalma         ###   ########.fr       */
+/*   Updated: 2023/09/27 07:26:49 by pabpalma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
+int	ft_putstr_fd(char *s, int fd)
+{
+	int	length;
+	int	written;
+
+	if (!s)
+		s = "(null)";
+	length = strlen(s);
+	written = write(fd, s, length);
+	if (written != length)
+		return (-1);
+	return (written);
+}
+
+int	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+	return (1);
+}
 
 int	typeflag(va_list *content, const char identifier)
 {
 	if (identifier == 'c')
 		return (ft_putchar_fd(va_arg(*content, int), 1));
-	else if (identifier == 's')
+	if (identifier == 's')
 		return (ft_putstr_fd(va_arg(*content, char *), 1));
-	else if (identifier == 'p')
-		return (ft_putptr_fd(va_arg(*content, void *), 1));
-	else if (identifier == 'd' || identifier == 'i')
-		return (ft_putnbr_fd(va_arg(*content, int), 1));
-	else if (identifier == 'u')
-		return (ft_putunsigned_fd(va_arg(*content, unsigned int), 1));
-	else if (identifier == 'x')
-		return (ft_puthexlo_fd(va_arg(*content, unsigned long), 1));
-	else if (identifier == 'X')
-		return (ft_puthexup_fd(va_arg(*content, unsigned long), 1));
 	else
 		return (0);
 }
@@ -35,7 +48,7 @@ int	typeflag(va_list *content, const char identifier)
 int	ft_printf(char const *str, ...)
 {
 	va_list	vargs;
-	int		charcount;
+	int	charcount;
 
 	charcount = 0;
 	va_start(vargs, str);
@@ -54,4 +67,14 @@ int	ft_printf(char const *str, ...)
 	}
 	va_end(vargs);
 	return (charcount);
+}
+
+int	main(void)
+{
+    printf("%s\n", "TEST5");
+    printf("%s\n", "------------------");
+    ft_printf("R: %c %c %c ", '0', 0, '1');
+    printf("\n");
+    printf("E: %c %c %c ", '0', 0, '1');
+    return (0);
 }
